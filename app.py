@@ -22,6 +22,8 @@ def data():
             data = pd.read_csv(file.filename)
         elif extension_data[1] == ".xlsx":
             data = pd.read_excel(file.filename)
+        elif extension_data[1] == ".xls":
+            data = pd.read_excel(file.filename)
         headings = data.columns.values
         for index, rows in data.iterrows():
             arr_dataset.append(rows.tolist())
