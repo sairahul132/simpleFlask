@@ -1,4 +1,5 @@
-from flask import Flask, app, render_template, request
+import os
+from flask import Flask, render_template, request
 import pandas as pd
 
 arr_dataset = []
@@ -14,23 +15,20 @@ def mypage():
 @app.route('/read-excel', methods=['GET', 'POST'])
 def data():
     if request.method == 'POST':
-        # request.get_json(force=True)
-        file = request.form['upload-file']
-
-        # file = request.files['upload-file']
-        # file.save(file.filename)
-
-        data = pd.read_csv(file)
+        file = request.files['upload-file']
+        file.save(file.filename)
+        extension_data = os.path.splitext(file.filename)
+        if extension_data[1] == ".csv":
+            data = pd.read_csv(file.filename)
+        elif extension_data[1] == ".xlsx":
+            data = pd.read_excel(file.filename)
         headings = data.columns.values
-        data = data
-        # print(axes)
         for index, rows in data.iterrows():
             arr_dataset.append(rows.tolist())
 
-        data = arr_dataset
-
-        return render_template('index.html', headings=headings, data=data)
-        # return render_template('index.html', data= data.to_html())
+        data_set = arr_dataset
+        os.remove(file.filename)
+        return render_template('index.html', headings=headings, data=data_set)
 
 
 if __name__ == '__main__':
