@@ -118,3 +118,28 @@ border-radius: 10px;
 background-color: #4285F4;
 }
 
+button.predictbtn {
+background: #008AD8;
+    color: white;
+    width:60px;
+    border-block-style: none;
+    position: relative;
+    left: 760px;
+    top: 12px;
+    border-style: none;
+    cursor: pointer;
+}
+select.selectprediction {
+background: #008AD8;
+color:white;
+ border-block-style: none;
+    position: relative;
+    left: 754px;
+    top: 12px;
+    border-style: none;
+    cursor: pointer;
+}
+option:hover {
+    background: white;
+    cursor: pointer;
+}
