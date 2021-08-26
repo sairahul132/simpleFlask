@@ -17,7 +17,18 @@
 
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./static/style.css"/>
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>-->
     <title>Defect Predictor</title>
+<!--    <script>-->
+
+<!--    $(document).ready(function(){-->
+<!--        $('input[type="file"]').change(function(e){-->
+<!--            var fileName = e.target.files[0].name;-->
+<!--            console.log(fileName)-->
+<!--            alert('The file "' + fileName +  '" has been selected.');-->
+<!--        });-->
+<!--    });-->
+<!--    </script>-->
 </head>
 <body>
 <form class="" action="read-excel" method="POST" enctype="multipart/form-data">
@@ -27,8 +38,8 @@
             <header>Drag & Drop to Upload File</header>
             <span>OR</span>
             <!--          <button>Browse File</button>-->
-            <input type="file" name="upload-file" value="Browse File" class="upload"/>
-            <input class="btn btn-primary submit" type="submit" name="" value="Submit"/>
+            <input id="select_file" type="file" name="upload-file" value="Browse File" class="upload"/>
+            <input id="submitbtn" class="btn btn-primary submit" type="submit" name="" value="Submit"/>
         </div>
     </div>
 </form>
