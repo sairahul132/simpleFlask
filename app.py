@@ -63,17 +63,14 @@ def predict():
         X_Train = sc_X.fit_transform(X_Train)
         X_Test = sc_X.transform(X_Test)
 
-        classifier = SVC(kernel='linear', random_state=5, gamma='auto', C=4)
-        a = classifier.fit(X_Train, Y_Train)
-        print(a)
+        g_classifier = ensemble.GradientBoostingClassifier(n_estimators=100)
+        g_classifier.fit(X_Train, Y_Train)
+        score2 = g_classifier.score(X_Test, Y_Test)
+        print(score2 * 100)
 
-        Y_Pred = classifier.predict(X_Test)
-        score = classifier.score(X_Train, Y_Train)
-        print(score * 100)
-        print(Y_Pred)
-
-        cm = confusion_matrix(Y_Test, Y_Pred)
-        print(cm)
+        predict = g_classifier.predict(X_Test)
+        ab = classification_report(Y_Test, predict)
+        print(ab)
 
         return render_template('predict.html')
 
