@@ -71,6 +71,7 @@ def predict():
         predict = g_classifier.predict(X_Test)
         ab = classification_report(Y_Test, predict)
         print(ab)
+        print(ab)
 
         return render_template('predict.html')
 
