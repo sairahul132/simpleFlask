@@ -6,7 +6,7 @@ import missingno as msno
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn import svm
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder,ensemble
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
